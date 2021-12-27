@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Ticket system]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Database [Ticket system]    Script Date: 27.12.2021 14:28:03 ******/
 CREATE DATABASE [Ticket system]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [Ticket system] SET QUERY_STORE = OFF
 GO
 USE [Ticket system]
 GO
-/****** Object:  Table [dbo].[Access]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Access]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -97,12 +97,12 @@ CREATE TABLE [dbo].[Access](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AuthorizationUser]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Authorization]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[AuthorizationUser](
+CREATE TABLE [dbo].[Authorization](
 	[IDAuth] [int] IDENTITY(1,1) NOT NULL,
 	[Login] [varchar](50) NOT NULL,
 	[Password] [varchar](50) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE [dbo].[AuthorizationUser](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CategoriesEvents]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[CategoriesEvents]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +130,7 @@ CREATE TABLE [dbo].[CategoriesEvents](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Events]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Events]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ CREATE TABLE [dbo].[Events](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Logging]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Logging]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -167,7 +167,7 @@ CREATE TABLE [dbo].[Logging](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Organization]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Organization]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,7 +183,7 @@ CREATE TABLE [dbo].[Organization](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Place]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Place]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -199,7 +199,7 @@ CREATE TABLE [dbo].[Place](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,7 +213,7 @@ CREATE TABLE [dbo].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tickets]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Tickets]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -232,7 +232,7 @@ CREATE TABLE [dbo].[Tickets](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TypeTicket]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[TypeTicket]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -249,7 +249,7 @@ CREATE TABLE [dbo].[TypeTicket](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 27.12.2021 13:22:26 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 27.12.2021 14:28:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,37 +267,20 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ViewerCustomer]    Script Date: 27.12.2021 13:22:26 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ViewerCustomer](
-	[IDCustomer] [int] IDENTITY(1,1) NOT NULL,
-	[LastName] [varchar](100) NOT NULL,
-	[FirstName] [varchar](100) NOT NULL,
-	[Patronymic] [varchar](100) NOT NULL,
-	[Email] [varchar](100) NOT NULL,
- CONSTRAINT [PK_ViewerCustomer] PRIMARY KEY CLUSTERED 
-(
-	[IDCustomer] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
 ALTER TABLE [dbo].[Access]  WITH CHECK ADD  CONSTRAINT [FK_Access_AuthorizationUser] FOREIGN KEY([IDAuth])
-REFERENCES [dbo].[AuthorizationUser] ([IDAuth])
+REFERENCES [dbo].[Authorization] ([IDAuth])
 GO
 ALTER TABLE [dbo].[Access] CHECK CONSTRAINT [FK_Access_AuthorizationUser]
 GO
-ALTER TABLE [dbo].[AuthorizationUser]  WITH CHECK ADD  CONSTRAINT [FK_AuthorizationUser_Users] FOREIGN KEY([IDUser])
+ALTER TABLE [dbo].[Authorization]  WITH CHECK ADD  CONSTRAINT [FK_AuthorizationUser_Users] FOREIGN KEY([IDUser])
 REFERENCES [dbo].[Users] ([IDUser])
 GO
-ALTER TABLE [dbo].[AuthorizationUser] CHECK CONSTRAINT [FK_AuthorizationUser_Users]
+ALTER TABLE [dbo].[Authorization] CHECK CONSTRAINT [FK_AuthorizationUser_Users]
 GO
-ALTER TABLE [dbo].[AuthorizationUser]  WITH CHECK ADD  CONSTRAINT [FK_Users_Roles] FOREIGN KEY([IDRole])
+ALTER TABLE [dbo].[Authorization]  WITH CHECK ADD  CONSTRAINT [FK_Users_Roles] FOREIGN KEY([IDRole])
 REFERENCES [dbo].[Roles] ([IDRole])
 GO
-ALTER TABLE [dbo].[AuthorizationUser] CHECK CONSTRAINT [FK_Users_Roles]
+ALTER TABLE [dbo].[Authorization] CHECK CONSTRAINT [FK_Users_Roles]
 GO
 ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_Access] FOREIGN KEY([IDAccess])
 REFERENCES [dbo].[Access] ([IDAccess])
@@ -328,11 +311,6 @@ ALTER TABLE [dbo].[Tickets]  WITH CHECK ADD  CONSTRAINT [FK_Tickets_TypeTicket1]
 REFERENCES [dbo].[TypeTicket] ([IDType])
 GO
 ALTER TABLE [dbo].[Tickets] CHECK CONSTRAINT [FK_Tickets_TypeTicket1]
-GO
-ALTER TABLE [dbo].[Tickets]  WITH CHECK ADD  CONSTRAINT [FK_Tickets_ViewerCustomer] FOREIGN KEY([IDType])
-REFERENCES [dbo].[ViewerCustomer] ([IDCustomer])
-GO
-ALTER TABLE [dbo].[Tickets] CHECK CONSTRAINT [FK_Tickets_ViewerCustomer]
 GO
 USE [master]
 GO
