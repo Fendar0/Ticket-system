@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Ticket system]    Script Date: 27.12.2021 15:07:32 ******/
+/****** Object:  Database [Ticket system]    Script Date: 29.12.2021 15:27:17 ******/
 CREATE DATABASE [Ticket system]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,24 +80,7 @@ ALTER DATABASE [Ticket system] SET QUERY_STORE = OFF
 GO
 USE [Ticket system]
 GO
-/****** Object:  Table [dbo].[Access]    Script Date: 27.12.2021 15:07:33 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Access](
-	[IDAccess] [int] IDENTITY(1,1) NOT NULL,
-	[Rights] [varchar](100) NOT NULL,
-	[IDAuth] [int] NOT NULL,
-	[Author] [varchar](200) NOT NULL,
-	[CreateDate] [datetime] NOT NULL,
- CONSTRAINT [PK_Access] PRIMARY KEY CLUSTERED 
-(
-	[IDAccess] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Authorization]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Authorization]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -115,7 +98,7 @@ CREATE TABLE [dbo].[Authorization](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CategoriesEvents]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[CategoriesEvents]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +112,7 @@ CREATE TABLE [dbo].[CategoriesEvents](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Events]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Events]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -141,7 +124,7 @@ CREATE TABLE [dbo].[Events](
 	[NumbersOfVisitors] [int] NOT NULL,
 	[IDOrganisation] [int] NOT NULL,
 	[Status] [varchar](100) NOT NULL,
-	[IDAccess] [int] NOT NULL,
+	[IDAuth] [int] NOT NULL,
 	[StartDate] [datetime] NOT NULL,
 	[EndDate] [datetime] NOT NULL,
  CONSTRAINT [PK_Events] PRIMARY KEY CLUSTERED 
@@ -150,7 +133,7 @@ CREATE TABLE [dbo].[Events](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Logging]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Logging]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,7 +149,7 @@ CREATE TABLE [dbo].[Logging](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Organization]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Organization]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -182,7 +165,7 @@ CREATE TABLE [dbo].[Organization](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Place]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Place]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +181,7 @@ CREATE TABLE [dbo].[Place](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -212,7 +195,7 @@ CREATE TABLE [dbo].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tickets]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Tickets]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,24 +214,25 @@ CREATE TABLE [dbo].[Tickets](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TypeTicket]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[TypeTicket]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[TypeTicket](
-	[IDType] [int] NOT NULL,
+	[IDType] [int] IDENTITY(1,1) NOT NULL,
 	[Cost] [decimal](18, 2) NOT NULL,
 	[Title] [varchar](400) NOT NULL,
 	[Type] [varchar](50) NOT NULL,
 	[Amount] [int] NOT NULL,
+	[Description] [varchar](500) NOT NULL,
  CONSTRAINT [PK_TypeTicket] PRIMARY KEY CLUSTERED 
 (
 	[IDType] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 27.12.2021 15:07:33 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 29.12.2021 15:27:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -265,51 +249,6 @@ CREATE TABLE [dbo].[Users](
 	[IDUser] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-ALTER TABLE [dbo].[Access]  WITH CHECK ADD  CONSTRAINT [FK_Access_AuthorizationUser] FOREIGN KEY([IDAuth])
-REFERENCES [dbo].[Authorization] ([IDAuth])
-GO
-ALTER TABLE [dbo].[Access] CHECK CONSTRAINT [FK_Access_AuthorizationUser]
-GO
-ALTER TABLE [dbo].[Authorization]  WITH CHECK ADD  CONSTRAINT [FK_AuthorizationUser_Users] FOREIGN KEY([IDUser])
-REFERENCES [dbo].[Users] ([IDUser])
-GO
-ALTER TABLE [dbo].[Authorization] CHECK CONSTRAINT [FK_AuthorizationUser_Users]
-GO
-ALTER TABLE [dbo].[Authorization]  WITH CHECK ADD  CONSTRAINT [FK_Users_Roles] FOREIGN KEY([IDRole])
-REFERENCES [dbo].[Roles] ([IDRole])
-GO
-ALTER TABLE [dbo].[Authorization] CHECK CONSTRAINT [FK_Users_Roles]
-GO
-ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_Access] FOREIGN KEY([IDAccess])
-REFERENCES [dbo].[Access] ([IDAccess])
-GO
-ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_Access]
-GO
-ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_CategoriesEvents] FOREIGN KEY([IDCategory])
-REFERENCES [dbo].[CategoriesEvents] ([IDCategory])
-GO
-ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_CategoriesEvents]
-GO
-ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_Organization] FOREIGN KEY([IDOrganisation])
-REFERENCES [dbo].[Organization] ([IDOrganization])
-GO
-ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_Organization]
-GO
-ALTER TABLE [dbo].[Tickets]  WITH CHECK ADD  CONSTRAINT [FK_Tickets_Events] FOREIGN KEY([IDEvent])
-REFERENCES [dbo].[Events] ([IDEvents])
-GO
-ALTER TABLE [dbo].[Tickets] CHECK CONSTRAINT [FK_Tickets_Events]
-GO
-ALTER TABLE [dbo].[Tickets]  WITH CHECK ADD  CONSTRAINT [FK_Tickets_Place] FOREIGN KEY([IDPlace])
-REFERENCES [dbo].[Place] ([IDPlace])
-GO
-ALTER TABLE [dbo].[Tickets] CHECK CONSTRAINT [FK_Tickets_Place]
-GO
-ALTER TABLE [dbo].[Tickets]  WITH CHECK ADD  CONSTRAINT [FK_Tickets_TypeTicket1] FOREIGN KEY([IDType])
-REFERENCES [dbo].[TypeTicket] ([IDType])
-GO
-ALTER TABLE [dbo].[Tickets] CHECK CONSTRAINT [FK_Tickets_TypeTicket1]
 GO
 USE [master]
 GO
