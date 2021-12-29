@@ -18,5 +18,8 @@ namespace Ticket_system
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        public static Logic logic { get; } = new Logic();
+        public static Authentication authentication { get; } = new Authentication();
     }
 }

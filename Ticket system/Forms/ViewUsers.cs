@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace Ticket_system
 {
-    public partial class Form1 : Form
+    public partial class ViewUsers : Form
     {
-        public Form1()
+        Users user;
+
+        public ViewUsers()
         {
             InitializeComponent();
         }
