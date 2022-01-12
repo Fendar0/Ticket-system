@@ -4,18 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9a9f5e1f9e134638a63dd4aff9038f6f" Name="Diagram1">
+      <Diagram DiagramId="2d5a418c7f194cc1b775290423c87fad" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Authorization" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CategoriesEvents" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Events" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Logging" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Organization" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Place" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Roles" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Tickets" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TypeTicket" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Events" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Logging" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Organization" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Place" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Roles" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Tickets" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TypeTicket" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -17,14 +17,51 @@ namespace Ticket_system
         /// </summary>
         /// <param name="user">Переданные данные с формы</param>
         /// <param name="auth">Переданные данные с формы</param>
-        public void AddUser(Users user, Authorization auth)
+        public void AddUser(Authorization auth)
         {
             using (Ticket_Entities te = new Ticket_Entities())
             {
-                te.Users.Add(user);
                 te.Authorization.Add(auth);
                 te.SaveChanges();
             }           
+        }
+               
+        public void UpdateRecords(Authorization authorization)
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                Authorization olddata = te.Authorization.FirstOrDefault(x => x.IDAuth == authorization.IDAuth);
+                olddata.Surname = authorization.Surname;
+                olddata.FirstName = authorization.FirstName;
+                olddata.Patronymic = authorization.Patronymic;
+                olddata.DateBirth = authorization.DateBirth;
+                olddata.Sex = authorization.Sex;
+                olddata.Login = authorization.Login;
+                olddata.Password = authorization.Password;
+                olddata.IDRole = authorization.IDRole;
+                olddata.CreateDate = authorization.CreateDate;
+                te.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Получение данных из таблицы CategoriesEvents
+        /// </summary>
+        /// <returns></returns>
+        public List<CategoriesEvents> GetDataCateg()
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                return te.CategoriesEvents.ToList();
+            }
+        }
+
+        public List<Authorization> View()
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                return te.Authorization.ToList();
+            }
         }
 
         /// <summary>
@@ -32,22 +69,21 @@ namespace Ticket_system
         /// </summary>
         /// <param name="user">Переданные данные с формы</param>
         /// <param name="auth">Переданные данные с формы</param>
-        public void EditingUser(Users user, Authorization auth)
+        public void EditingUser(Authorization auth)
         {
             using (Ticket_Entities te = new Ticket_Entities())
             {
-                Users oldusers = te.Users.FirstOrDefault(x => x.IDUser == user.IDUser);
-                oldusers.FirstName = user.FirstName;
-                oldusers.Surname = user.Surname;
-                oldusers.Patronymic = user.Patronymic;
-                oldusers.DateBirth = user.DateBirth;
-                oldusers.Sex = user.Sex;
-                Authorization oldauth = te.Authorization.FirstOrDefault(x => x.IDUser == user.IDUser);
+                Authorization oldauth = te.Authorization.FirstOrDefault(x => x.IDAuth == auth.IDAuth);
+                oldauth.FirstName = auth.FirstName;
+                oldauth.Surname = auth.Surname;
+                oldauth.Patronymic = auth.Patronymic;
+                oldauth.DateBirth = auth.DateBirth;
+                oldauth.Sex = auth.Sex;                
                 oldauth.Login = auth.Login;
                 oldauth.Password = auth.Password;
-                oldauth.CreateDate = auth.CreateDate;
                 oldauth.IDRole = auth.IDRole;
-                oldauth.IDUser = user.IDUser;
+                oldauth.CreateDate = auth.CreateDate;                
+                //oldauth.IDUser = user.IDUser;
                 te.SaveChanges();
             }
         }

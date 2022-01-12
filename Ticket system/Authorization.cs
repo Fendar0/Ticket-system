@@ -19,6 +19,10 @@ namespace Ticket_system
         public string Password { get; set; }
         public int IDRole { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public int IDUser { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public string Patronymic { get; set; }
+        public System.DateTime DateBirth { get; set; }
+        public string Sex { get; set; }
     }
 }

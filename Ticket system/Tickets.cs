@@ -16,10 +16,13 @@ namespace Ticket_system
     {
         public int ID { get; set; }
         public System.Guid IDTicket { get; set; }
-        public string NameOrganisation { get; set; }
+        public int IDOrganization { get; set; }
         public string EmailBuyer { get; set; }
         public int IDEvent { get; set; }
         public int IDPlace { get; set; }
         public int IDType { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public string Patronymic { get; set; }
     }
 }

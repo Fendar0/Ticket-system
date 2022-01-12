@@ -10,16 +10,27 @@ using System.Windows.Forms;
 
 namespace Ticket_system
 {
-    public partial class Form1 : Form
+    public partial class FormAuthorization : Form
     {
-        public Form1()
+        public FormAuthorization()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btLogIn_Click(object sender, EventArgs e)
         {
-           
+            string login = tbLogIn.Text.ToString();
+            string password = tbPassword.Text.ToString();
+            this.Close();
+            Hide();
+            Program.authentication.Authen(password, login);            
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            FormView fv = new FormView();
+            fv.ShowDialog();
+            Close();
         }
     }
 }

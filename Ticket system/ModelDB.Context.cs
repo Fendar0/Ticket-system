@@ -35,6 +35,5 @@ namespace Ticket_system
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tickets> Tickets { get; set; }
         public virtual DbSet<TypeTicket> TypeTicket { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
     }
 }

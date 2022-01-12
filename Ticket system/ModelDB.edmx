@@ -14,7 +14,11 @@
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDRole" Type="int" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="IDUser" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateBirth" Type="datetime" Nullable="false" />
+          <Property Name="Sex" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="CategoriesEvents">
           <Key>
@@ -87,11 +91,14 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDTicket" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="NameOrganisation" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="IDOrganization" Type="int" Nullable="false" />
           <Property Name="EmailBuyer" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="IDEvent" Type="int" Nullable="false" />
           <Property Name="IDPlace" Type="int" Nullable="false" />
           <Property Name="IDType" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeTicket">
           <Key>
@@ -104,17 +111,6 @@
           <Property Name="Amount" Type="int" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
         </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="IDUser" />
-          </Key>
-          <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Patronymic" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="DateBirth" Type="datetime" Nullable="false" />
-          <Property Name="Sex" Type="char" MaxLength="1" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="Хранилище ModelContainer">
           <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriesEvents" EntityType="Self.CategoriesEvents" Schema="dbo" store:Type="Tables" />
@@ -126,7 +122,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeTicket" EntityType="Self.TypeTicket" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -142,7 +137,11 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDRole" Type="Int32" Nullable="false" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="CategoriesEvents">
           <Key>
@@ -215,11 +214,14 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDTicket" Type="Guid" Nullable="false" />
-          <Property Name="NameOrganisation" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDOrganization" Type="Int32" Nullable="false" />
           <Property Name="EmailBuyer" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDEvent" Type="Int32" Nullable="false" />
           <Property Name="IDPlace" Type="Int32" Nullable="false" />
           <Property Name="IDType" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeTicket">
           <Key>
@@ -232,17 +234,6 @@
           <Property Name="Amount" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="IDUser" />
-          </Key>
-          <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DateBirth" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="Ticket_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authorization" EntityType="Self.Authorization" />
           <EntitySet Name="CategoriesEvents" EntityType="Self.CategoriesEvents" />
@@ -254,7 +245,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" />
           <EntitySet Name="TypeTicket" EntityType="Self.TypeTicket" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -270,7 +260,11 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IDRole" ColumnName="IDRole" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -351,11 +345,14 @@
               <MappingFragment StoreEntitySet="Tickets">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDTicket" ColumnName="IDTicket" />
-                <ScalarProperty Name="NameOrganisation" ColumnName="NameOrganisation" />
+                <ScalarProperty Name="IDOrganization" ColumnName="IDOrganization" />
                 <ScalarProperty Name="EmailBuyer" ColumnName="EmailBuyer" />
                 <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
                 <ScalarProperty Name="IDPlace" ColumnName="IDPlace" />
                 <ScalarProperty Name="IDType" ColumnName="IDType" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -368,18 +365,6 @@
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Model.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-                <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
