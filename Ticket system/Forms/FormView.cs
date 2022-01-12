@@ -34,7 +34,7 @@ namespace Ticket_system
             FormAuthorization fa = new FormAuthorization();
             fa.ShowDialog();
             Hide();
-            this.Close();
+            Close();
         }
 
         private void UpdateControl()
