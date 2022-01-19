@@ -76,30 +76,35 @@
             // 
             // btLogIn
             // 
+            this.btLogIn.BackColor = System.Drawing.Color.White;
+            this.btLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btLogIn.Location = new System.Drawing.Point(152, 80);
             this.btLogIn.Name = "btLogIn";
             this.btLogIn.Size = new System.Drawing.Size(124, 39);
             this.btLogIn.TabIndex = 4;
             this.btLogIn.Text = "Войти";
-            this.btLogIn.UseVisualStyleBackColor = true;
+            this.btLogIn.UseVisualStyleBackColor = false;
             this.btLogIn.Click += new System.EventHandler(this.btLogIn_Click);
             // 
             // btBack
             // 
+            this.btBack.BackColor = System.Drawing.Color.White;
+            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btBack.Location = new System.Drawing.Point(16, 80);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(124, 39);
             this.btBack.TabIndex = 5;
             this.btBack.Text = "Назад";
-            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
             // FormAuthorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(294, 127);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.btLogIn);

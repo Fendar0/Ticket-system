@@ -19,11 +19,6 @@ namespace Ticket_system
             UpdateControl();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -32,9 +27,9 @@ namespace Ticket_system
         private void lblogIn_Click(object sender, EventArgs e)
         {
             FormAuthorization fa = new FormAuthorization();
-            fa.ShowDialog();
             Hide();
-            Close();
+            fa.ShowDialog();
+            Show();
         }
 
         private void UpdateControl()
@@ -45,15 +40,23 @@ namespace Ticket_system
 
             for (int i = 0; i < catList.Count; i++)
             {
-                tabControl.TabPages.Add(catList[i]);                   
+                tabControl.TabPages.Add(catList[i]);
+                FlowLayoutPanel panel = new FlowLayoutPanel();
+                panel.Location = new Point(tabControl.Location.X - 12, tabControl.Location.Y - 66);
+                panel.Width = tabControl.Width;
+                panel.Height = tabControl.Height;
+                panel.BackColor = Color.White;
+                panel.AutoScroll = true;
+                panel.WrapContents = true;
+                tabControl.TabPages[i].Controls.Add(panel);
+                                
             }                       
         }
 
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private void tabControl_Selected(object sender, TabControlEventArgs e)
         {
-                        
-        }
+            toolTip1.SetToolTip(tabControl, "Выберите категорию и нажмите 2 раза по мероприятию");
 
-       
+        }
     }
 }

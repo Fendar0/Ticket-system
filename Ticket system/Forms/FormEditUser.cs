@@ -84,10 +84,7 @@ namespace Ticket_system
 
         private void btBack_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Hide();
-            FormUsersInfo formUsersInfo = new FormUsersInfo();
-            formUsersInfo.Show();
+            Close();
         }
     }
 }

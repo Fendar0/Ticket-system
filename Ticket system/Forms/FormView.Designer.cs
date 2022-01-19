@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btExit = new System.Windows.Forms.Button();
             this.lblogIn = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btExit
@@ -40,7 +41,7 @@
             this.btExit.FlatAppearance.BorderSize = 0;
             this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btExit.Location = new System.Drawing.Point(156, 357);
+            this.btExit.Location = new System.Drawing.Point(156, 330);
             this.btExit.Margin = new System.Windows.Forms.Padding(0);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(305, 42);
@@ -52,7 +53,7 @@
             // lblogIn
             // 
             this.lblogIn.AutoSize = true;
-            this.lblogIn.Location = new System.Drawing.Point(12, 357);
+            this.lblogIn.Location = new System.Drawing.Point(12, 330);
             this.lblogIn.Name = "lblogIn";
             this.lblogIn.Size = new System.Drawing.Size(134, 13);
             this.lblogIn.TabIndex = 3;
@@ -61,12 +62,12 @@
             // 
             // tabControl
             // 
-            this.tabControl.Location = new System.Drawing.Point(12, 66);
+            this.tabControl.Location = new System.Drawing.Point(12, 39);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(450, 288);
             this.tabControl.TabIndex = 4;
-            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl_Selected);
             // 
             // label1
             // 
@@ -78,29 +79,18 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Автоматизировання билетная система\r\n";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Выберите категорию и нажмите 2 раза по мероприятию";
-            // 
             // FormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(470, 404);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(470, 380);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.lblogIn);
             this.Controls.Add(this.btExit);
             this.Name = "FormView";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,7 +101,7 @@
         private System.Windows.Forms.Label lblogIn;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

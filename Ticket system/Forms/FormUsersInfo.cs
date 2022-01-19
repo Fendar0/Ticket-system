@@ -44,15 +44,15 @@ namespace Ticket_system
                 Authorization authData = lstAuth.FirstOrDefault(x => x.IDAuth == authorization.IDAuth);
                 FormEditUser formEditUser = new FormEditUser(authData);
                 if (formEditUser.ShowDialog() == DialogResult.OK)
-                    Program.logic.UpdateRecords(authData);
+                    Program.logic.UpdateRecordsUsers(authData);
             }
 
 
         }
 
-        private void FormUsersInfo_Load(object sender, EventArgs e)
+        private void btBack_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -34,6 +34,8 @@
             this.btTicketInf = new System.Windows.Forms.Button();
             this.btLogs = new System.Windows.Forms.Button();
             this.btBack = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btUsersInf
@@ -61,7 +63,7 @@
             // btEventsInf
             // 
             this.btEventsInf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btEventsInf.Location = new System.Drawing.Point(12, 144);
+            this.btEventsInf.Location = new System.Drawing.Point(13, 233);
             this.btEventsInf.Name = "btEventsInf";
             this.btEventsInf.Size = new System.Drawing.Size(223, 61);
             this.btEventsInf.TabIndex = 2;
@@ -72,7 +74,7 @@
             // btTicketInf
             // 
             this.btTicketInf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btTicketInf.Location = new System.Drawing.Point(12, 206);
+            this.btTicketInf.Location = new System.Drawing.Point(13, 364);
             this.btTicketInf.Name = "btTicketInf";
             this.btTicketInf.Size = new System.Drawing.Size(223, 58);
             this.btTicketInf.TabIndex = 3;
@@ -83,7 +85,7 @@
             // btLogs
             // 
             this.btLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btLogs.Location = new System.Drawing.Point(12, 270);
+            this.btLogs.Location = new System.Drawing.Point(12, 428);
             this.btLogs.Name = "btLogs";
             this.btLogs.Size = new System.Drawing.Size(109, 35);
             this.btLogs.TabIndex = 4;
@@ -94,7 +96,7 @@
             // btBack
             // 
             this.btBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btBack.Location = new System.Drawing.Point(126, 270);
+            this.btBack.Location = new System.Drawing.Point(126, 428);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(109, 35);
             this.btBack.TabIndex = 5;
@@ -102,11 +104,34 @@
             this.btBack.UseVisualStyleBackColor = true;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(13, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(223, 83);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Информация\r\nо категориях мероприятий\r\n";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(13, 300);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(223, 58);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Информация\r\nо местах проведения";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 315);
+            this.ClientSize = new System.Drawing.Size(248, 474);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.btLogs);
             this.Controls.Add(this.btTicketInf);
@@ -127,5 +152,7 @@
         private System.Windows.Forms.Button btTicketInf;
         private System.Windows.Forms.Button btLogs;
         private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

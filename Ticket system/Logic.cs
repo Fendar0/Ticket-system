@@ -15,7 +15,6 @@ namespace Ticket_system
         /// <summary>
         /// Метод добавления пользователей
         /// </summary>
-        /// <param name="user">Переданные данные с формы</param>
         /// <param name="auth">Переданные данные с формы</param>
         public void AddUser(Authorization auth)
         {
@@ -24,9 +23,13 @@ namespace Ticket_system
                 te.Authorization.Add(auth);
                 te.SaveChanges();
             }           
-        }
-               
-        public void UpdateRecords(Authorization authorization)
+        }      
+
+        /// <summary>
+        /// Класс обновления данных таблицы
+        /// </summary>
+        /// <param name="authorization">Передача данных с формы</param>
+        public void UpdateRecordsUsers(Authorization authorization)
         {
             using (Ticket_Entities te = new Ticket_Entities())
             {
@@ -56,6 +59,22 @@ namespace Ticket_system
             }
         }
 
+        /// <summary>
+        /// Получение данных из таблицы Events
+        /// </summary>
+        /// <returns></returns>
+        public List<Events> GetDataEvents()
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                return te.Events.ToList();
+            }
+        }
+
+        /// <summary>
+        /// Получени данных из таблицы Authorization
+        /// </summary>
+        /// <returns></returns>
         public List<Authorization> View()
         {
             using (Ticket_Entities te = new Ticket_Entities())
@@ -65,9 +84,49 @@ namespace Ticket_system
         }
 
         /// <summary>
+        /// Получение данных из ттаблицы Organization
+        /// </summary>
+        /// <returns></returns>
+        public List<Organization> GetDataOrganization()
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                return te.Organization.ToList();
+            }
+        }
+
+        /// <summary>
+        /// Обновление данных
+        /// </summary>
+        /// <param name="organization">Данные переданные с формы</param>
+        public void UpdateRecordsOrganization(Organization organization)
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                Organization olddata = te.Organization.FirstOrDefault(x => x.IDOrganization == organization.IDOrganization);
+                olddata.Title = organization.Title;
+                olddata.Email = organization.Email;
+                olddata.PhoneNumber = organization.PhoneNumber;
+                te.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// Обновление данных
+        /// </summary>
+        /// <param name="categoriesEvents">Данные переданные с формы</param>
+        public void UpdateRecordsCategEvent(CategoriesEvents categoriesEvents)
+        {
+            using (Ticket_Entities te = new Ticket_Entities())
+            {
+                CategoriesEvents olddata = te.CategoriesEvents.FirstOrDefault(x => x.IDCategory == categoriesEvents.IDCategory);
+                olddata.Category = categoriesEvents.Category;                
+                te.SaveChanges();
+            }
+        }
+
+        /// <summary>
         /// Метод редактирования польщователей
         /// </summary>
-        /// <param name="user">Переданные данные с формы</param>
         /// <param name="auth">Переданные данные с формы</param>
         public void EditingUser(Authorization auth)
         {
@@ -82,8 +141,7 @@ namespace Ticket_system
                 oldauth.Login = auth.Login;
                 oldauth.Password = auth.Password;
                 oldauth.IDRole = auth.IDRole;
-                oldauth.CreateDate = auth.CreateDate;                
-                //oldauth.IDUser = user.IDUser;
+                oldauth.CreateDate = auth.CreateDate;   
                 te.SaveChanges();
             }
         }

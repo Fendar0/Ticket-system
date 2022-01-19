@@ -65,6 +65,36 @@
     <Compile Include="Events.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormOrganizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer.Designer.cs">
+      <DependentUpon>FormOrganizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeller.Designer.cs">
+      <DependentUpon>FormSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPlace.Designer.cs">
+      <DependentUpon>FormPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditEvent.Designer.cs">
+      <DependentUpon>FormEditEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditOrganization.Designer.cs">
+      <DependentUpon>FormEditOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +136,6 @@
     </Compile>
     <Compile Include="Forms\FormAuthorization.Designer.cs">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormOrganizer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormOrganizer.Designer.cs">
-      <DependentUpon>FormOrganizer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAdministrator.cs">
       <SubType>Form</SubType>
@@ -164,12 +188,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\FormSeller.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormSeller.Designer.cs">
-      <DependentUpon>FormSeller.cs</DependentUpon>
-    </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
@@ -182,6 +200,24 @@
     <Compile Include="TypeTicket.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormOrganizer.resx">
+      <DependentUpon>FormOrganizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeller.resx">
+      <DependentUpon>FormSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPlace.resx">
+      <DependentUpon>FormPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCategoriesEvents.resx">
+      <DependentUpon>FormCategoriesEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditEvent.resx">
+      <DependentUpon>FormEditEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditOrganization.resx">
+      <DependentUpon>FormEditOrganization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAdministrator.resx">
       <DependentUpon>FormAdministrator.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,8 +227,11 @@
     <EmbeddedResource Include="Forms\FormEditUser.resx">
       <DependentUpon>FormEditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSeller.resx">
-      <DependentUpon>FormSeller.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEventsInf.resx">
+      <DependentUpon>FormEventsInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormOrganizationInf.resx">
+      <DependentUpon>FormOrganizationInf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUsersInfo.resx">
       <DependentUpon>FormUsersInfo.cs</DependentUpon>

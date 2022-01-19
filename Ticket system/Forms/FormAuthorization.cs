@@ -28,8 +28,6 @@ namespace Ticket_system
 
         private void btBack_Click(object sender, EventArgs e)
         {
-            FormView fv = new FormView();
-            fv.ShowDialog();
             Close();
         }
     }
